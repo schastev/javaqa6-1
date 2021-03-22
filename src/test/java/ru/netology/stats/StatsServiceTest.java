@@ -1,24 +1,8 @@
 package ru.netology.stats;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
-
-    @ParameterizedTest
-    @CsvFileSource(resources="/data.csv", delimiter='|', numLinesToSkip = 1)
-
-    void StatsService(String test, methodname, int[] sales, int expected) {
-        StatsService service = new StatsService();
-
-        // вызываем целевой метод:
-        int actual = methodname(sales);
-
-        // производим проверку (сравниваем ожидаемый и фактический):
-        assertEquals(expected, actual);
-    }
 
     @org.junit.jupiter.api.Test
     void calcSumTest() {
