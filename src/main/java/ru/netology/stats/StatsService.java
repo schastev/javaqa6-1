@@ -11,8 +11,8 @@ public class StatsService {
     }
 
     public int calcAvg(int[] sales) {
-        int sum = calcSum(sales) / sales.length;
-        return sum;
+        int avg = calcSum(sales) / sales.length;
+        return avg;
     }
 
     public int calcMax(int[] sales) {
