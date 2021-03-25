@@ -11,12 +11,8 @@ public class StatsService {
     }
 
     public int calcAvg(int[] sales) {
-        int avg = 0;
-        for (int sale : sales) {
-            avg += sale;
-        }
-        avg = avg / sales.length;
-        return avg;
+        int sum = calcSum(sales) / sales.length;
+        return sum;
     }
 
     public int calcMax(int[] sales) {
@@ -26,7 +22,6 @@ public class StatsService {
             if (sales[i] >= max) {
                 max = sales[i];
                 maxMonth = i + 1;
-
             }
         }
         return maxMonth;
@@ -45,11 +40,7 @@ public class StatsService {
     }
 
     public int calcBelowAvg(int[] sales) {
-        int avg = 0;
-        for (int sale : sales) {
-            avg += sale;
-        }
-        avg = avg / sales.length;
+        int avg = calcAvg(sales);
         int months = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) {
@@ -60,11 +51,7 @@ public class StatsService {
     }
 
     public int calcAboveAvg(int[] sales) {
-        int avg = 0;
-        for (int sale : sales) {
-            avg += sale;
-        }
-        avg = avg / sales.length;
+        int avg = calcAvg(sales);
         int months = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) {
